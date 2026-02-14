@@ -2,306 +2,267 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For My Amma💖</title>
+<title>For My Ammakutty ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  font-family: "Georgia", serif;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  margin: 0;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: radial-gradient(circle at top, #5f1a2b, #120407);
+  color: #fff;
   overflow-x: hidden;
 }
 
-.container {
+/* Floating Hearts */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 18px;
+  animation: floatUp 10s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0) scale(1); opacity: 0.6; }
+  to { transform: translateY(-120vh) scale(1.8); opacity: 0; }
+}
+
+/* Card */
+.card {
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.14),
+    rgba(255,255,255,0.04)
+  );
+  backdrop-filter: blur(18px);
+  border-radius: 28px;
+  padding: 42px;
+  max-width: 560px;
   width: 90%;
-  max-width: 600px;
-}
-
-.page {
-  background: white;
-  border-radius: 24px;
-  padding: 50px 40px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
   text-align: center;
-  animation: fadeIn 0.8s ease forwards;
-}
-
-.hidden {
-  display: none;
+  box-shadow:
+    0 0 60px rgba(255,143,163,0.18),
+    0 50px 120px rgba(0,0,0,0.7);
+  animation: fadeIn 1.2s ease forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
+  from { opacity: 0; transform: translateY(25px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.emoji-large {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
 h1 {
-  font-size: 2rem;
-  color: #e75480;
-  margin-bottom: 15px;
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, #ffd6e0, #ff8fa3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 18px;
 }
 
-.subtitle {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 25px;
-  line-height: 1.6;
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  opacity: 0.95;
 }
 
-.button-area {
+/* Buttons */
+.buttons {
   position: relative;
-  height: 70px;
-  margin-top: 25px;
+  height: 90px;
 }
 
 button {
-  padding: 14px 28px;
+  padding: 15px 34px;
   font-size: 1rem;
-  border-radius: 50px;
+  border-radius: 40px;
   border: none;
   cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s ease;
+  transition: all 0.35s ease;
 }
 
-.btn-main {
-  background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
-  color: white;
-  box-shadow: 0 10px 30px rgba(255, 117, 140, 0.4);
+#yesBtn {
+  background: linear-gradient(135deg, #ff4d6d, #ffb3c6);
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 14px 40px rgba(255,77,109,0.45);
 }
 
-.btn-main:hover {
-  transform: translateY(-3px);
+#yesBtn:hover {
+  transform: scale(1.1);
 }
 
-.btn-no {
+#noBtn {
+  background: transparent;
+  border: 2px solid #ff9bb3;
+  color: #ff9bb3;
   position: absolute;
-  left: 60%;
-  background: white;
-  color: #ff758c;
-  border: 2px solid #ff758c;
 }
 
-.no-hint {
-  margin-top: 15px;
-  font-size: 0.9rem;
-  color: #e75480;
-  opacity: 0.8;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  margin: 30px 0;
-}
-
-.gallery div {
-  aspect-ratio: 1;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  display: flex;
+.page2 {
+  display: none;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: white;
+  gap: 24px;
+}
+
+.gif-placeholder img {
+  width: 280px;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.letter-btn {
+  background: linear-gradient(135deg, #ffe3ec, #ffb3c6);
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 12px 35px rgba(255,179,198,0.45);
 }
 
 .letter {
-  background: #fff0f5;
-  padding: 30px;
-  border-radius: 16px;
-  margin-top: 20px;
-  text-align: left;
-  line-height: 1.8;
   display: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.14),
+    rgba(0,0,0,0.65)
+  );
+  padding: 28px;
+  border-radius: 20px;
+  max-width: 440px;
+  line-height: 1.75;
+  transform-origin: top;
 }
 
-.letter.active {
-  display: block;
-}
-
-.divider {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #ff758c, transparent);
-  margin: 20px 0;
+@keyframes unfold {
+  from { transform: scaleY(0); opacity: 0; }
+  to { transform: scaleY(1); opacity: 1; }
 }
 
 .countdown {
-  margin-top: 20px;
-  font-weight: 600;
-  color: #e75480;
-  text-align: center;
-}
-
-.confetti {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  pointer-events: none;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #ffd6e0;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- PAGE 1 -->
+<div class="card" id="page1">
+  <h1> Amma..I promise to make you proud and happy with my Life❤️</h1>
+  <p>
+    <!-- You customise this writing -->
+    You have been my strength, my safety, and go to go person for anything and everything.
+    I don’t want a lifetime without you in it.
+    <br><br>
+    So promise me you’ll always choose me,
+    even when I irritate you a little too much.
+  </p>
 
-  <!-- PAGE 1 -->
-  <div class="page" id="page1">
-    <div class="emoji-large">🌸</div>
-    <h1>Hey Mom 💖</h1>
-    <p class="subtitle">
-      You’ve been my strength, my protector, and my biggest blessing.
-      <br><br>
-      Through every stage of my life, you stood beside me.
-      <br><br>
-      <strong>
-        Promise me you’ll always choose me in every life…
-        even when I irritate you a little too much?💕
-      </strong>
-    </p>
+  <div class="buttons">
+    <button id="yesBtn">Always 💖</button>
+    <button id="noBtn">No</button>
+  </div>
+</div>
 
-    <div class="button-area">
-      <button class="btn-main" onclick="goToPage2()">Always 💗</button>
-      <button class="btn-no" id="noBtn">No</button>
-    </div>
+<!-- PAGE 2 -->
+<div class="card page2" id="page2">
+  <h1>You are my Home 💐</h1>
 
-    <div class="no-hint">No is an inapplicable option 😌</div>
+  <div class="gif-placeholder">
+    <!-- Replace with any gif or image you want -->
+    <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
   </div>
 
-  <!-- PAGE 2 -->
-  <div class="page hidden" id="page2">
-    <div class="emoji-large">💐</div>
-    <h1>I Love You, Mom</h1>
-    <p class="subtitle">
-      There is no version of my life where you are not the heart of it.
+  <button class="letter-btn" onclick="openLetter()">Open the Letter 💌</button>
+
+  <div class="letter" id="letter">
+    <p>
+      <!-- Customise this entire section -->
+      Thank you for every sacrifice,
+      every silent prayer,
+      every time you stayed strong for me.
     </p>
 
-    <div class="gallery">
-      <div>💖</div>
-      <div>🌷</div>
-      <div>✨</div>
-      <div>👑</div>
-      <div>🌼</div>
-      <div>♾️</div>
-    </div>
+    <hr style="border-color:#ff8fa3;">
 
-    <button class="btn-main" onclick="openLetter()">Read My Letter 💌</button>
+    <p>
+      I may grow older,
+      but I will always be your child.
+    </p>
 
-    <div class="letter" id="letter">
-      <h3>For The Woman Who Gave Me Everything</h3>
-      <p>
-        Mom, thank you for the sacrifices I didn’t see,
-        the prayers I didn’t hear,
-        and the strength you showed even when you were tired.
-      </p>
-
-      <div class="divider"></div>
-
-      <p>
-        Because of you:
-        <br>✨ I know what unconditional love feels like
-        <br>✨ I know what strength truly means
-        <br>✨ I know I will never walk alone
-      </p>
-
-      <div class="divider"></div>
-
-      <p>
-        No matter how old I get, I will always be your child.
-        <br><br>
-        Forever grateful,
-        <br>
-        Your child 💗
-      </p>
-
-      <div class="countdown" id="countdown"></div>
-    </div>
+    <div class="countdown" id="countdown"></div>
   </div>
-
 </div>
 
 <script>
 const noBtn = document.getElementById("noBtn");
-const buttonArea = document.querySelector(".button-area");
+const yesBtn = document.getElementById("yesBtn");
+const page1 = document.getElementById("page1");
+const page2 = document.getElementById("page2");
 
-noBtn.addEventListener("mouseenter", moveNoButton);
-noBtn.addEventListener("mousemove", moveNoButton);
+let yesScale = 1;
 
-function moveNoButton() {
-  const areaRect = buttonArea.getBoundingClientRect();
-  const btnRect = noBtn.getBoundingClientRect();
+/* Running No Button */
+noBtn.addEventListener("mouseenter", () => {
+  const x = Math.random() * 300 - 150;
+  const y = Math.random() * 200 - 100;
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
 
-  const maxX = areaRect.width - btnRect.width;
-  const maxY = areaRect.height - btnRect.height;
+  yesScale += 0.12;
+  yesBtn.style.transform = `scale(${yesScale})`;
+});
 
-  const randomX = Math.random() * maxX;
-  const randomY = Math.random() * maxY;
+/* Yes Click */
+yesBtn.addEventListener("click", () => {
+  page1.style.display = "none";
+  page2.style.display = "flex";
+});
 
-  noBtn.style.left = randomX + "px";
-  noBtn.style.top = randomY + "px";
-}
-
-function goToPage2() {
-  document.getElementById("page1").classList.add("hidden");
-  document.getElementById("page2").classList.remove("hidden");
-  createConfetti();
-}
-
+/* Letter Open */
 function openLetter() {
-  document.getElementById("letter").classList.add("active");
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  const letter = document.getElementById("letter");
+  const btn = document.querySelector(".letter-btn");
+
+  letter.style.display = "block";
+  letter.style.animation = "unfold 1s ease forwards";
+
+  btn.style.pointerEvents = "none";
+
+  updateCounter();
+  setInterval(updateCounter, 86400000);
 }
 
-function updateCountdown() {
+/* Countdown */
+function updateCounter() {
   const today = new Date();
-  const endOfYear = new Date(today.getFullYear(), 11, 31);
-  const daysLeft = Math.ceil((endOfYear - today) / (1000 * 60 * 60 * 24));
+  const end = new Date(today.getFullYear(), 11, 31);
+  const diff = Math.ceil((end - today) / (1000 * 60 * 60 * 24));
+
   document.getElementById("countdown").innerHTML =
-    `⏳ ${daysLeft} days left to celebrate you this year!`;
+    `⏳ ${diff} days left this year to make you proud`;
 }
 
-function createConfetti() {
-  for (let i = 0; i < 60; i++) {
-    const confetti = document.createElement("div");
-    confetti.className = "confetti";
-    confetti.style.left = Math.random() * window.innerWidth + "px";
-    confetti.style.top = "-10px";
-    confetti.style.background =
-      ["#ff758c", "#ff7eb3", "#ffc3a0"][Math.floor(Math.random() * 3)];
-    document.body.appendChild(confetti);
-
-    const duration = Math.random() * 2 + 2;
-    const xMove = (Math.random() - 0.5) * 300;
-
-    confetti.animate([
-      { transform: "translateY(0)", opacity: 1 },
-      { transform: `translateX(${xMove}px) translateY(${window.innerHeight}px)`, opacity: 0 }
-    ], {
-      duration: duration * 1000,
-      easing: "ease-out"
-    });
-
-    setTimeout(() => confetti.remove(), duration * 1000);
-  }
-}
+/* Floating Hearts */
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 14 + 16 + "px";
+  heart.innerText = "💖";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 10000);
+}, 800);
 </script>
 
 </body>
