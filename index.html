@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Amma💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+}
+
+.page {
+  background: white;
+  border-radius: 24px;
+  padding: 50px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.emoji-large {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #e75480;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.button-area {
+  position: relative;
+  height: 70px;
+  margin-top: 25px;
+}
+
+button {
+  padding: 14px 28px;
+  font-size: 1rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-main {
+  background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+  color: white;
+  box-shadow: 0 10px 30px rgba(255, 117, 140, 0.4);
+}
+
+.btn-main:hover {
+  transform: translateY(-3px);
+}
+
+.btn-no {
+  position: absolute;
+  left: 60%;
+  background: white;
+  color: #ff758c;
+  border: 2px solid #ff758c;
+}
+
+.no-hint {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #e75480;
+  opacity: 0.8;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.gallery div {
+  aspect-ratio: 1;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.letter {
+  background: #fff0f5;
+  padding: 30px;
+  border-radius: 16px;
+  margin-top: 20px;
+  text-align: left;
+  line-height: 1.8;
+  display: none;
+}
+
+.letter.active {
+  display: block;
+}
+
+.divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff758c, transparent);
+  margin: 20px 0;
+}
+
+.countdown {
+  margin-top: 20px;
+  font-weight: 600;
+  color: #e75480;
+  text-align: center;
+}
+
+.confetti {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- PAGE 1 -->
+  <div class="page" id="page1">
+    <div class="emoji-large">🌸</div>
+    <h1>Hey Mom 💖</h1>
+    <p class="subtitle">
+      You’ve been my strength, my protector, and my biggest blessing.
+      <br><br>
+      Through every stage of my life, you stood beside me.
+      <br><br>
+      <strong>
+        Promise me you’ll always choose me in every life…
+        even when I irritate you a little too much?💕
+      </strong>
+    </p>
+
+    <div class="button-area">
+      <button class="btn-main" onclick="goToPage2()">Always 💗</button>
+      <button class="btn-no" id="noBtn">No</button>
+    </div>
+
+    <div class="no-hint">No is an inapplicable option 😌</div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page hidden" id="page2">
+    <div class="emoji-large">💐</div>
+    <h1>I Love You, Mom</h1>
+    <p class="subtitle">
+      There is no version of my life where you are not the heart of it.
+    </p>
+
+    <div class="gallery">
+      <div>💖</div>
+      <div>🌷</div>
+      <div>✨</div>
+      <div>👑</div>
+      <div>🌼</div>
+      <div>♾️</div>
+    </div>
+
+    <button class="btn-main" onclick="openLetter()">Read My Letter 💌</button>
+
+    <div class="letter" id="letter">
+      <h3>For The Woman Who Gave Me Everything</h3>
+      <p>
+        Mom, thank you for the sacrifices I didn’t see,
+        the prayers I didn’t hear,
+        and the strength you showed even when you were tired.
+      </p>
+
+      <div class="divider"></div>
+
+      <p>
+        Because of you:
+        <br>✨ I know what unconditional love feels like
+        <br>✨ I know what strength truly means
+        <br>✨ I know I will never walk alone
+      </p>
+
+      <div class="divider"></div>
+
+      <p>
+        No matter how old I get, I will always be your child.
+        <br><br>
+        Forever grateful,
+        <br>
+        Your child 💗
+      </p>
+
+      <div class="countdown" id="countdown"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const buttonArea = document.querySelector(".button-area");
+
+noBtn.addEventListener("mouseenter", moveNoButton);
+noBtn.addEventListener("mousemove", moveNoButton);
+
+function moveNoButton() {
+  const areaRect = buttonArea.getBoundingClientRect();
+  const btnRect = noBtn.getBoundingClientRect();
+
+  const maxX = areaRect.width - btnRect.width;
+  const maxY = areaRect.height - btnRect.height;
+
+  const randomX = Math.random() * maxX;
+  const randomY = Math.random() * maxY;
+
+  noBtn.style.left = randomX + "px";
+  noBtn.style.top = randomY + "px";
+}
+
+function goToPage2() {
+  document.getElementById("page1").classList.add("hidden");
+  document.getElementById("page2").classList.remove("hidden");
+  createConfetti();
+}
+
+function openLetter() {
+  document.getElementById("letter").classList.add("active");
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+}
+
+function updateCountdown() {
+  const today = new Date();
+  const endOfYear = new Date(today.getFullYear(), 11, 31);
+  const daysLeft = Math.ceil((endOfYear - today) / (1000 * 60 * 60 * 24));
+  document.getElementById("countdown").innerHTML =
+    `⏳ ${daysLeft} days left to celebrate you this year!`;
+}
+
+function createConfetti() {
+  for (let i = 0; i < 60; i++) {
+    const confetti = document.createElement("div");
+    confetti.className = "confetti";
+    confetti.style.left = Math.random() * window.innerWidth + "px";
+    confetti.style.top = "-10px";
+    confetti.style.background =
+      ["#ff758c", "#ff7eb3", "#ffc3a0"][Math.floor(Math.random() * 3)];
+    document.body.appendChild(confetti);
+
+    const duration = Math.random() * 2 + 2;
+    const xMove = (Math.random() - 0.5) * 300;
+
+    confetti.animate([
+      { transform: "translateY(0)", opacity: 1 },
+      { transform: `translateX(${xMove}px) translateY(${window.innerHeight}px)`, opacity: 0 }
+    ], {
+      duration: duration * 1000,
+      easing: "ease-out"
+    });
+
+    setTimeout(() => confetti.remove(), duration * 1000);
+  }
+}
+</script>
+
+</body>
+</html>
